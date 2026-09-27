@@ -1,7 +1,7 @@
 export const message_overview = [
     {
         id: "zoro",
-        id_src: "/images/profiles/zoro.jpg",
+        id_src: "/images/profiles/Zoro.jpg",
         time: "3h"
     },
     {
@@ -28,19 +28,19 @@ export const message_overview = [
 export const message_notes = [
     {
         id: "kei_urana",
-        id_src: "profiles/kei.jpg"
+        id_src: "/images/profiles/kei.jpg"
     },
     {
         id: "lina",
-        id_src: "profiles/lina.jpg"
+        id_src: "/images/profiles/lina.jpg"
     },
     {
         id: "max",
-        id_src: "profiles/max.jpg"
+        id_src: "/images/profiles/max.jpg"
     },
     {
         id: "yuta",
-        id_src: "profiles/yuta.jpg"
+        id_src: "/images/profiles/yuta.jpg"
     }
 ]
 export const chat_messages = {

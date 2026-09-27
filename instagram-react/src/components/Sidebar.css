@@ -48,6 +48,8 @@
     gap: 16px;
     align-items: center;
     padding: 10px;
+    text-decoration: none;
+    color: inherit;
 }
 .nav-name
 {

@@ -1,29 +1,7 @@
-.message-section
-{
-    display: flex;
-    flex-direction: row;
-    margin-left: 5px;
-    align-items: center;
-    gap: 5px;
-    margin-left: 10px;
-}
-.profile-section
-{
-    display: flex;
-    flex-direction: row;
-    margin-right: 10px;
-}
-.profile-section img
-{
-    margin-right: -4px;
-    width: 24px;
-    border-radius: 50%;
-    height: 24px;
-    border: 2px solid rgb(33, 35, 40);
-}
+
 .messages-section
 {
-    display: none;
+    display: flex;
     height: 100vh;
     flex-direction: row;
     margin-left: 70px;
