@@ -1,0 +1,50 @@
+.message-utility
+{
+    position: fixed;
+    width: 90%;
+    max-width: 251px;
+    height: 56px;
+    right: 5%;
+    bottom: 5%;
+    z-index: 100;
+    display: flex;
+}
+.message-button
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(33, 35, 40);
+    color: white;
+    border-radius: 44px;
+    border: 0.8px solid black;
+    justify-content: space-between;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+.message-section
+{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5px;
+    align-items: center;
+    gap: 5px;
+    margin-left: 10px;
+}
+.profile-section
+{
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+}
+.profile-section img
+{
+    margin-right: -4px;
+    width: 24px;
+    border-radius: 50%;
+    height: 24px;
+    border: 2px solid rgb(33, 35, 40);
+}
