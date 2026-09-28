@@ -48,7 +48,7 @@ export const chat_messages = {
 
         username: "zoro",
 
-        profile_name: "zoro.jpg",
+        profile_name: "Zoro.jpg",
 
         messages: [
 
