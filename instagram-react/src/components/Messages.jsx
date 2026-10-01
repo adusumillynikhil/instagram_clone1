@@ -3,9 +3,10 @@ import { MessageNotes } from "./MessageNotes";
 import { MessagePreview } from "./MessagePreview";
 import { useState } from "react";
 import { Messageprofile } from "./MessageProfile";
+import { MessageChat } from "./MessageChat";
 import './Message.css';
 export function Messages() {
-    const [ selectedChat,setSelectedChat ] = useState("zoro");
+    const [ selectedChat,setSelectedChat ] = useState('zoro');
     return (
             <div className="messages-section">
                 <div className="chats-preview">
@@ -30,7 +31,7 @@ export function Messages() {
                         <span>Requests</span>
                     </div>
                     <div className="real-messages">
-                        <MessagePreview message_overview={message_overview} setSelectedChat = {setSelectedChat}/>
+                        <MessagePreview message_overview={message_overview} selectedChat = {selectedChat} setSelectedChat = {setSelectedChat}/>
                     </div>
                 </div>
                 <div className="message-display">
@@ -45,7 +46,7 @@ export function Messages() {
                         </div>
                     </div>
                     <div className="chat">
-
+                        <MessageChat chat_messages = {chat_messages} selectedChat = {selectedChat}></MessageChat>
                     </div>
                     <div className="send-message">
                         <div className="chat-message">

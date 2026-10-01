@@ -29,6 +29,12 @@
 {
     color: white;
 }
+.profile
+{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+}
 .profile img
 {
     width: 24px;
@@ -71,3 +77,4 @@
     border-radius: 4px;
     cursor: pointer;
 }
+

@@ -1,11 +1,11 @@
 import './Message.css';
-export function MessagePreview({ message_overview , setSelectedChat}) {
+export function MessagePreview({ message_overview , selectedChat ,setSelectedChat}) {
     return (
         <>
             {
                 message_overview.map((message) => {
                     return (
-                        <div className="rm-profile" onClick={()=>setSelectedChat(message.id)} key={message.id}>
+                        <div className={selectedChat=== message.id ? "rm-profile selected" : "rm-profile"} onClick={()=>setSelectedChat(message.id)} key={message.id}>
                             <img src={message.id_src} />
                             <div className="rm-info">
                                 <span><b>{message.id}</b></span>

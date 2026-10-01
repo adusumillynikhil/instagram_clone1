@@ -11,6 +11,7 @@ body
 {
     display: flex;
     align-items: center;
+    width: 100%;
     flex-direction: column;
 }
 .profile-page
@@ -18,7 +19,7 @@ body
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 50%;
+    width: 45%;
     padding: 30px 20px 0px 20px;
     gap: 10px;
 }
@@ -33,10 +34,11 @@ body
     font-size: 24px;
     font-weight: 700;
 }
-.profile-details
+.profile-details-profile
 {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 .followers-box
 {
@@ -64,4 +66,46 @@ body
     border: 0px ;
     border-radius: 12px;
     border-bottom-color: rgba(43, 48, 54, 0.8);
+}
+.highlights-section
+{
+    display: flex;
+    margin-top: 10px;
+    justify-content: flex-start;
+}
+.highlights-section-inner
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.profile-navbar
+{
+    margin-top: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.divider {
+    width: 60%;
+    border: none;
+    border-top: 1px solid #848484;
+    margin: 20px auto;
+}
+.post-controls
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 60px 44px;
+}
+.share-photos
+{
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 700;
 }

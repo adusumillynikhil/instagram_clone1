@@ -4,6 +4,7 @@ import { Sidebar } from './components/sidebar';
 import { MessageUtility } from './components/MessageUtility';
 import { Container } from './components/Container';
 import { Messages } from './components/Messages';
+import { Profile } from './components/Profile';
 function App() {
   return (
     <BrowserRouter>
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path = '/' element={<Container />} />
         <Route path = '/messages' element={<Messages />} />
+        <Route path = '/profile' element={<Profile />} />
       </Routes>
     </BrowserRouter>
   )
