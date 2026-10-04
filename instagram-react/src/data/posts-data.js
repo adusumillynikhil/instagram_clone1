@@ -8,6 +8,48 @@ export const posts = [
         likes_count: 461,
         comments_count: 2045,
         post_descip: "That was unfortunate today 😮‍💨 Hopefully we can have a good race! We keep pushing @redbullracing 💪",
+        comments: [
+            {
+                id: 1,
+                username: "onepiece",
+                img_src: "images/profiles/onepiece.jpg",
+                text: "Being average is comfortable. Being obsessed is what changes everything. 🏁🔥",
+                likes: 25345,
+                time_posted: "1 d"
+            },
+            {
+                id: 2,
+                username: "zoro",
+                img_src: "images/profiles/Zoro.jpg",
+                text: "This post goes insanely hard. 🔥",
+                likes: 8421,
+                time_posted: "18 h"
+            },
+            {
+                id: 3,
+                username: "luffy",
+                img_src: "images/profiles/luffy.jpg",
+                text: "I like this! Now where's the food? 🍖😂",
+                likes: 12763,
+                time_posted: "12 h"
+            },
+            {
+                id: 4,
+                username: "yuta",
+                img_src: "images/profiles/yuta.jpg",
+                text: "The attention to detail here is actually amazing.",
+                likes: 4218,
+                time_posted: "8 h"
+            },
+            {
+                id: 5,
+                username: "lelouch",
+                img_src: "images/profiles/lelouch.jpg",
+                text: "Everything is going according to plan. ♟️",
+                likes: 9876,
+                time_posted: "3 h"
+            }
+        ]
     },
     {
         id: "kei_urana",
@@ -18,6 +60,48 @@ export const posts = [
         likes_count: 236.2,
         comments_count: 230,
         post_descip: " 🚯🤡🎪🤖",
+        comments: [
+            {
+                id: 6,
+                username: "onepiece",
+                img_src: "images/profiles/onepiece.jpg",
+                text: "Being average is comfortable. Being obsessed is what changes everything. 🏁🔥",
+                likes: 25345,
+                time_posted: "1 d"
+            },
+            {
+                id: 7,
+                username: "zoro",
+                img_src: "images/profiles/Zoro.jpg",
+                text: "This post goes insanely hard. 🔥",
+                likes: 8421,
+                time_posted: "18 h"
+            },
+            {
+                id: 8,
+                username: "luffy",
+                img_src: "images/profiles/luffy.jpg",
+                text: "I like this! Now where's the food? 🍖😂",
+                likes: 12763,
+                time_posted: "12 h"
+            },
+            {
+                id: 9,
+                username: "yuta",
+                img_src: "images/profiles/yuta.jpg",
+                text: "The attention to detail here is actually amazing.",
+                likes: 4218,
+                time_posted: "8 h"
+            },
+            {
+                id: 10,
+                username: "lelouch",
+                img_src: "images/profiles/lelouch.jpg",
+                text: "Everything is going according to plan. ♟️",
+                likes: 9876,
+                time_posted: "3 h"
+            }
+        ]
     },
     {
         id: "onepiece",
@@ -28,6 +112,48 @@ export const posts = [
         likes_count: 1,
         comments_count: 898,
         post_descip: "onepiece",
+        comments: [
+            {
+                id: 11,
+                username: "onepiece",
+                img_src: "images/profiles/onepiece.jpg",
+                text: "Being average is comfortable. Being obsessed is what changes everything. 🏁🔥",
+                likes: 25345,
+                time_posted: "1 d"
+            },
+            {
+                id: 12,
+                username: "zoro",
+                img_src: "images/profiles/Zoro.jpg",
+                text: "This post goes insanely hard. 🔥",
+                likes: 8421,
+                time_posted: "18 h"
+            },
+            {
+                id: 13,
+                username: "luffy",
+                img_src: "images/profiles/luffy.jpg",
+                text: "I like this! Now where's the food? 🍖😂",
+                likes: 12763,
+                time_posted: "12 h"
+            },
+            {
+                id: 14,
+                username: "yuta",
+                img_src: "images/profiles/yuta.jpg",
+                text: "The attention to detail here is actually amazing.",
+                likes: 4218,
+                time_posted: "8 h"
+            },
+            {
+                id: 15,
+                username: "lelouch",
+                img_src: "images/profiles/lelouch.jpg",
+                text: "Everything is going according to plan. ♟️",
+                likes: 9876,
+                time_posted: "3 h"
+            }
+        ]
     }
 ]
 export const story = [
@@ -43,5 +169,5 @@ export const story = [
         id: "kei_urana",
         profile_src: "/images/profiles/kei.jpg",
     },
-    
+
 ]
