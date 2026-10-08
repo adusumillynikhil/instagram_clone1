@@ -1,0 +1,139 @@
+.newPost-container {
+    width: 100%;
+    height: 600px;
+
+    display: flex;
+
+    background: #262626;
+}
+
+
+/* Image on the left */
+.post-image {
+    width: 65%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* Right side of preview */
+.newpost-details {
+    width: 35%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Profile section */
+.new-post-profile {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 15px;
+
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.new-post-profile img {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+
+/* Caption area */
+.new-post-caption {
+    flex: 1;
+
+    padding: 15px;
+}
+
+
+/* Caption textarea */
+.caption-input {
+    width: 100%;
+    height: 150px;
+
+    resize: none;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 14px;
+
+    box-sizing: border-box;
+}
+
+.caption-input::placeholder {
+    color: #8e8e8e;
+}
+
+
+/* Share button */
+.newpost-details button {
+    height: 45px;
+
+    margin: 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #0095f6;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.newpost-details button:hover {
+    background: #1877f2;
+}
+
+
+/* Smaller screens */
+@media (max-width: 700px) {
+
+    .modal-content {
+        width: 95%;
+        min-height: 400px;
+    }
+
+    .newPost-container {
+        height: 500px;
+        flex-direction: column;
+    }
+
+    .post-image {
+        width: 100%;
+        height: 60%;
+    }
+
+    .newpost-details {
+        width: 100%;
+        height: 40%;
+    }
+
+    .new-post-profile {
+        height: 50px;
+    }
+
+    .caption-input {
+        height: 80px;
+    }
+}

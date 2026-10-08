@@ -66,7 +66,7 @@ export function Comments({ post, onClose }) {
                                                 <div className="authors-descrip-pic">
                                                     <img src={comment.img_src} />
                                                 </div>
-                                                <div>
+                                                <div className='authors-comment-details'>
                                                     <span>
                                                         <b>{comment.username}</b> {comment.text}
                                                     </span>

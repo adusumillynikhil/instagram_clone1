@@ -1,10 +1,10 @@
-import { posts, story } from '../data/posts-data';
+import { story }  from '../data/posts-data';
 import { Story } from './Story';
 import './Story.css';
 import { useState } from 'react';
 import { Post } from './Post';
 import { Comments } from './Comments';
-export function Container() {
+export function Container({posts}) {
     const [showComments , setShowComments] = useState(false);
     const [selectedPost , setSelectedPost] = useState(null);
     function openComments(post){
