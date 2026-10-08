@@ -2,6 +2,7 @@ import './PreviewPage.css';
 import { useState } from 'react';
 export function PreviewPage({ file , handleNewPost , setNewPost}) {
     const [ caption , setCaption ] = useState('');
+    const imageUrl = URL.createObjectURL(file);
     function createPost()
     {
         const newPost = {
@@ -9,7 +10,7 @@ export function PreviewPage({ file , handleNewPost , setNewPost}) {
         profile_id: crypto.randomUUID(),
         time_posted: "now",
         profile_src: "/images/profiles/profile.jpg",
-        post_src: URL.createObjectURL(file),
+        post_src: imageUrl,
         likes_count: 0,
         comments_count: 0,
         post_descip: caption,
@@ -20,7 +21,7 @@ export function PreviewPage({ file , handleNewPost , setNewPost}) {
     }
     return (
         <div className="newPost-container">
-            <img className="post-image" src={URL.createObjectURL(file)}/>
+            <img className="post-image" src={imageUrl}/>
 
                 <div className="newpost-details">
                     <div className="new-post-profile">
