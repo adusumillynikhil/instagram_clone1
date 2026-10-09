@@ -4,17 +4,20 @@ import './Story.css';
 import { useState } from 'react';
 import { Post } from './Post';
 import { Comments } from './Comments';
-export function Container({posts}) {
+export function Container({posts , handleLike , handleComment}) {
     const [showComments , setShowComments] = useState(false);
-    const [selectedPost , setSelectedPost] = useState(null);
+    const [selectedPostId , setSelectedPostId] = useState(null);
     function openComments(post){
-        setSelectedPost(post);
+        setSelectedPostId(post.id);
         setShowComments(true);
     }
     function closeComments(){
         setShowComments(false);
-        setSelectedPost(null);
+        setSelectedPostId(null);
     }
+    const selectedPost = posts.find(
+        post => post.id === selectedPostId
+    ) ?? null; 
     return (
             <div className="container">
                 <main className="main-section">
@@ -24,14 +27,14 @@ export function Container({posts}) {
                     <div className="post-grid js-post-grid">
                         {
                             posts.map((post)=>(
-                                <Post key={post.id} post = {post} onCommentClick = {()=>openComments(post)} />
+                                <Post key={post.id} post = {post} onCommentClick = {()=>openComments(post)} handleLike={handleLike}/>
                             ))
                         }
                     </div>
                 </main>
                 {
-                            showComments && (
-                                <Comments post={selectedPost} onClose = {closeComments} />
+                            showComments && selectedPost && (
+                                <Comments post={selectedPost} onClose = {closeComments} handleComment ={handleComment}/>
                             )
                         }
             </div>

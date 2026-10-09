@@ -15,12 +15,46 @@ function App() {
     {
         setPosts(prev=>[newpost,...prev]);
     }
+  function handleLike(profileId)
+  {
+    setPosts(
+      prev=>prev.map(post=>{
+        if(post.profile_id!=profileId){
+          return post;
+        }
+        const liked = !post.liked;
+        return{
+          ...post,
+          liked : liked,
+          likes_count: post.likes_count + (liked ? 1 : -1),
+        }
+      })
+    )
+  }
+  function handleComment(profileId,comments)
+  {
+    setPosts(
+      prev=>prev.map(post=>{
+        if (post.profile_id!=profileId){
+          return post;
+        }
+        return{
+          ...post,
+          comments_count: post.comments_count + 1,
+          comments:[
+                    ...post.comments,
+                    comments
+                ]
+        }
+      })
+    )
+  }
   return (
     <BrowserRouter>
       <Sidebar setNewPost = {setNewPost}/>
       <MessageUtility />
       <Routes>
-        <Route path = '/' element={<Container posts={posts}/>} />
+        <Route path = '/' element={<Container posts={posts} handleLike = {handleLike} handleComment={handleComment}/>} />
         <Route path = '/messages' element={<Messages />} />
         <Route path = '/profile' element={<Profile />} />
       </Routes>

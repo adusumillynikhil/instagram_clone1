@@ -5,7 +5,8 @@ export const posts = [
         time_posted: "18 h",
         profile_src: "/images/profiles/max.jpg",
         post_src: "/images/posts/max.jpg",
-        likes_count: 461,
+        liked: false,
+        likes_count: 461234,
         comments_count: 2045,
         post_descip: "That was unfortunate today 😮‍💨 Hopefully we can have a good race! We keep pushing @redbullracing 💪",
         comments: [
@@ -57,7 +58,8 @@ export const posts = [
         time_posted: "1 w",
         profile_src: "/images/profiles/kei.jpg",
         post_src: "/images/posts/kei.jpg",
-        likes_count: 236.2,
+        liked: false,
+        likes_count: 236234,
         comments_count: 230,
         post_descip: " 🚯🤡🎪🤖",
         comments: [
@@ -109,7 +111,8 @@ export const posts = [
         time_posted: "1 w",
         profile_src: "/images/profiles/onepiece.jpg",
         post_src: "/images/posts/onepiece.jpg",
-        likes_count: 1,
+        liked: false,
+        likes_count: 123456,
         comments_count: 898,
         post_descip: "onepiece",
         comments: [

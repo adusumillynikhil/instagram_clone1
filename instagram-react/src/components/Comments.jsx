@@ -1,39 +1,33 @@
 import './Comments.css';
 import { useState } from 'react';
-export function Comments({ post, onClose }) {
-    const [ commentR , setCommentR ] = useState(post);
+export function Comments({ post, onClose ,handleComment}) {
     const [ message , setMessage] = useState('');
     function sendComment()
     {
         if (!message.trim()) return;
-        setCommentR(prev=>({
-            ...prev,
-                comments:[
-                    ...prev.comments,
-                    {
+        const comments = {
                         id: Date.now(),
                         username: 'nikiru._.san',
                         img_src: "images/icons/profile.jpg",
                         text: message,
                         likes: 0,
                         time_posted: "1 m"
-                    },
-                ]
-        }));
+                    };
         setMessage('');
+        handleComment(post.profile_id , comments);
     }
     return (
         <div className='comments-dialog'>
             <div className="dialog-box">
                 <button className="close-button" onClick={onClose}><svg aria-label="Close" className="x1lliihq x1n2onr6 x9bdzbf" fill="currentColor" height="18" role="img" viewBox="0 0 24 24" width="18"><title>Close</title><polyline fill="none" points="20.643 3.357 12 12 3.353 20.647" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" x1="20.649" x2="3.354" y1="20.649" y2="3.354"></line></svg></button>
                 <div className="dialog-post">
-                    <img src={commentR.post_src} />
+                    <img src={post.post_src} />
                 </div>
                 <div className="real-comments">
                     <div className="profile-comments">
                         <div className="comments-part1">
-                            <div className="comments-img"><img src={commentR.profile_src} /></div>
-                            <div className="comments-profile-name"><b>{commentR.id}</b></div>
+                            <div className="comments-img"><img src={post.profile_src} /></div>
+                            <div className="comments-profile-name"><b>{post.id}</b></div>
                             <span>•</span>
                             <button>Follow</button>
                         </div>
@@ -45,21 +39,21 @@ export function Comments({ post, onClose }) {
                         <div className="authors-descrip">
                             <div className="authors-descrip-part1">
                                 <div className="authors-descrip-pic">
-                                    <img src={commentR.profile_src} />
+                                    <img src={post.profile_src} />
                                 </div>
                                 <div>
                                     <span>
-                                        <b>{commentR.id}</b> {commentR.post_descip}
+                                        <b>{post.id}</b> {post.post_descip}
                                     </span>
                                     <div className="authors-descrip-post-time">
-                                        {commentR.time_posted}
+                                        {post.time_posted}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <ul className="comments-real-list">
                             {
-                                commentR.comments.map((comment) => (
+                                post.comments.map((comment) => (
                                     <li key={comment.id}>
                                         <div className="authors-descrip">
                                             <div className="authors-descrip-part1">
@@ -105,7 +99,7 @@ export function Comments({ post, onClose }) {
                             </div>
                         </div>
                         <div className="comments-like-count">
-                            <b>{post.likes_count}k likes</b>
+                            <b>{post.likes_count} likes</b>
                         </div>
                         <div className="post-time">
                             {post.time_posted}
