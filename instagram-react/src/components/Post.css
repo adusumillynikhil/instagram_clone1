@@ -162,3 +162,10 @@
 .xxk16z8 {
     color: red;
 }
+.influencer-name
+{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
