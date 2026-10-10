@@ -12,6 +12,7 @@ function App() {
   const [newPost , setNewPost] = useState(false);
   const [posts, setPosts] = useState(data);
   const [ savedPosts , setSavedPosts ] = useState([]);
+  const [ followedAcc , setFollowedAccount ] = useState([]);
   function handleNewPost(newpost)
     {
         setPosts(prev=>[newpost,...prev]);
@@ -59,12 +60,21 @@ function App() {
       return [...prev, postId];
     })
   }
+  function handleFollow(postId)
+  {
+    setFollowedAccount(prev=>{
+      if(prev.includes(postId)) {
+        return prev.filter(savedFollow => savedFollow !== postId);
+      }
+      return [...prev, postId];
+    })
+  }
   return (
     <BrowserRouter>
       <Sidebar setNewPost = {setNewPost}/>
       <MessageUtility />
       <Routes>
-        <Route path = '/' element={<Container posts={posts} handleLike = {handleLike} handleComment={handleComment} handleSavedPost={handleSavedPost} savedPosts={savedPosts}/>} />
+        <Route path = '/' element={<Container posts={posts} handleLike = {handleLike} handleComment={handleComment} handleSavedPost={handleSavedPost} savedPosts={savedPosts} handleFollow = {handleFollow} followedAcc = {followedAcc}/>} />
         <Route path = '/messages' element={<Messages />} />
         <Route path = '/profile' element={<Profile />} />
       </Routes>

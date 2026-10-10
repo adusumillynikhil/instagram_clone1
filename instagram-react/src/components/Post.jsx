@@ -1,7 +1,5 @@
 import "./Post.css"
-import { useState } from "react"
-export function Post({ post, onCommentClick , handleLike , handleSavedPost , savedPosts}) {
-    const [follow, setFollow] = useState(false);
+export function Post({ post, onCommentClick , handleLike , handleSavedPost , savedPosts , handleFollow , followedAcc}) {
     return (
         <div className="post-preview" key={post.post_id}>
             <div className="profile-details">
@@ -19,7 +17,7 @@ export function Post({ post, onCommentClick , handleLike , handleSavedPost , sav
                 </div>
                 <div className="follow-section">
                     <div className="fol-button">
-                        <button className="follow-button" onClick={() => setFollow(!follow)}><b className="follow">{follow ? "Following" : "Follow"}</b>
+                        <button className="follow-button" onClick={() => handleFollow(post.id)}><b className="follow">{followedAcc.includes(post.id) ? "Following" : "Follow"}</b>
                         </button>
                     </div>
                     <div>

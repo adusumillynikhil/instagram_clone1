@@ -160,6 +160,28 @@ export const posts = [
                 time_posted: "3 h"
             }
         ]
+    },
+    {
+        id: "maxverstappen1",
+        profile_id: "1",
+        time_posted: "2 d",
+        post_id: 104,
+        profile_src: "/images/profiles/max.jpg",
+        post_src: "/images/posts/max-race.jpg",
+        liked: false,
+        likes_count: 385672,
+        comments_count: 1,
+        post_descip: "Race day memories 🏎️🔥 We keep fighting until the very end!",
+        comments: [
+            {
+                id: 1,
+                username: "luffy",
+                img_src: "/images/profiles/luffy.jpg",
+                text: "That car is fast! Can it deliver meat too? 🍖😂",
+                likes: 12763,
+                time_posted: "12 h"
+            }
+        ]
     }
 ]
 export const story = [
