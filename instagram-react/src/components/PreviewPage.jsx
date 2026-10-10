@@ -9,6 +9,7 @@ export function PreviewPage({ file , handleNewPost , setNewPost}) {
         id: "nikiru._.san",
         profile_id: crypto.randomUUID(),
         time_posted: "now",
+        post_id : crypto.randomUUID(),
         profile_src: "/images/profiles/profile.jpg",
         post_src: imageUrl,
         likes_count: 0,

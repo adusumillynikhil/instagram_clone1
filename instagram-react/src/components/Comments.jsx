@@ -14,7 +14,7 @@ export function Comments({ post, onClose ,handleComment}) {
                         time_posted: "1 m"
                     };
         setMessage('');
-        handleComment(post.profile_id , comments);
+        handleComment(post.post_id , comments);
     }
     return (
         <div className='comments-dialog'>

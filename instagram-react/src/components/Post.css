@@ -169,3 +169,10 @@
     gap: 5px;
     align-items: center;
 }
+.comments{
+    cursor: pointer;
+}
+.save
+{
+    cursor: pointer;
+}

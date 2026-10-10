@@ -72,10 +72,18 @@
     gap: 10px;
     padding: 14px 4px 14px 16px;
 }
+.comments-post-part1{
+    display: flex;
+    width: 100%;
+    min-width: 0;
+}
 .comments-post-part1 input{
     background-color: inherit;
     color: white;
     border: none;
+    outline: none;
+    flex: 1;
+    min-width: 0;
 }
 .comments-part2 svg
 {

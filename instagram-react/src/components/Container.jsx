@@ -4,7 +4,7 @@ import './Story.css';
 import { useState } from 'react';
 import { Post } from './Post';
 import { Comments } from './Comments';
-export function Container({posts , handleLike , handleComment}) {
+export function Container({posts , handleLike , handleComment , handleSavedPost , savedPosts}) {
     const [showComments , setShowComments] = useState(false);
     const [selectedPostId , setSelectedPostId] = useState(null);
     function openComments(post){
@@ -27,7 +27,7 @@ export function Container({posts , handleLike , handleComment}) {
                     <div className="post-grid js-post-grid">
                         {
                             posts.map((post)=>(
-                                <Post key={post.id} post = {post} onCommentClick = {()=>openComments(post)} handleLike={handleLike}/>
+                                <Post key={post.id} post = {post} onCommentClick = {()=>openComments(post)} handleLike={handleLike} handleSavedPost={handleSavedPost} savedPosts = {savedPosts}/>
                             ))
                         }
                     </div>

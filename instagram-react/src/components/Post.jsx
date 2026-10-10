@@ -1,9 +1,9 @@
 import "./Post.css"
 import { useState } from "react"
-export function Post({ post, onCommentClick , handleLike }) {
+export function Post({ post, onCommentClick , handleLike , handleSavedPost , savedPosts}) {
     const [follow, setFollow] = useState(false);
     return (
-        <div className="post-preview" key={post.profile_id}>
+        <div className="post-preview" key={post.post_id}>
             <div className="profile-details">
                 <div className="profile-div">
                     <div className="profile-image">
@@ -33,7 +33,7 @@ export function Post({ post, onCommentClick , handleLike }) {
             <div className="interactive-section">
                 <div className="sharing">
                     <div className="like">
-                        <button className="like-button" onClick={()=>handleLike(post.profile_id)}>
+                        <button className="like-button" onClick={()=>handleLike(post.post_id)}>
                             {post.liked ? (
                                 <svg aria-label="Unlike" className="x1lliihq x1n2onr6 xxk16z8" fill="currentColor" height="24" role="img" viewBox="0 0 48 48" width="24"><title>Unlike</title><path d="M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path></svg>
                             ) : (
@@ -44,7 +44,7 @@ export function Post({ post, onCommentClick , handleLike }) {
                             {post.likes_count}
                         </div>
                     </div>
-                    <button className="comments" data-id="${post.profile_id}" onClick={onCommentClick}>
+                    <button className="comments"  onClick={onCommentClick}>
                         <svg aria-label="Comment" className="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Comment</title><path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg>
                         <div className="comments-count">
                             {post.comments_count}
@@ -54,8 +54,12 @@ export function Post({ post, onCommentClick , handleLike }) {
                         <svg aria-label="Share" className="x1lliihq x1n2onr6 xyb1xck" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Share</title><path d="M13.973 20.046 21.77 6.928C22.8 5.195 21.55 3 19.535 3H4.466C2.138 3 .984 5.825 2.646 7.456l4.842 4.752 1.723 7.121c.548 2.266 3.571 2.721 4.762.717Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="7.488" x2="15.515" y1="12.208" y2="7.641"></line></svg>
                     </button>
                 </div>
-                <button className="save">
-                    <svg aria-label="Save" className="x1lliihq x1n2onr6 xyb1xck" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Save</title><polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon></svg>
+                <button className="save" onClick={()=>handleSavedPost(post.post_id)}>
+                    {
+                        savedPosts.includes(post.post_id) ? (<svg aria-label="Remove" class="x1lliihq x1n2onr6 xyb1xck" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Remove</title><path d="M20 22a.999.999 0 0 1-.687-.273L12 14.815l-7.313 6.912A1 1 0 0 1 3 21V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1Z"></path></svg>)
+                        :
+                        (<svg aria-label="Save" className="x1lliihq x1n2onr6 xyb1xck" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Save</title><polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon></svg>)
+                    }
                 </button>
             </div>
             <div className="post-details">

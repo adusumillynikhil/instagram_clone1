@@ -11,15 +11,16 @@ import { NewPost } from './components/NewPost';
 function App() {
   const [newPost , setNewPost] = useState(false);
   const [posts, setPosts] = useState(data);
+  const [ savedPosts , setSavedPosts ] = useState([]);
   function handleNewPost(newpost)
     {
         setPosts(prev=>[newpost,...prev]);
     }
-  function handleLike(profileId)
+  function handleLike(postId)
   {
     setPosts(
       prev=>prev.map(post=>{
-        if(post.profile_id!=profileId){
+        if(post.post_id!=postId){
           return post;
         }
         const liked = !post.liked;
@@ -31,11 +32,11 @@ function App() {
       })
     )
   }
-  function handleComment(profileId,comments)
+  function handleComment(postId,comments)
   {
     setPosts(
       prev=>prev.map(post=>{
-        if (post.profile_id!=profileId){
+        if (post.post_id!=postId){
           return post;
         }
         return{
@@ -49,12 +50,21 @@ function App() {
       })
     )
   }
+  function handleSavedPost(postId)
+  {
+    setSavedPosts(prev=>{
+      if(prev.includes(postId)) {
+        return prev.filter(savedPost => savedPost !== postId);
+      }
+      return [...prev, postId];
+    })
+  }
   return (
     <BrowserRouter>
       <Sidebar setNewPost = {setNewPost}/>
       <MessageUtility />
       <Routes>
-        <Route path = '/' element={<Container posts={posts} handleLike = {handleLike} handleComment={handleComment}/>} />
+        <Route path = '/' element={<Container posts={posts} handleLike = {handleLike} handleComment={handleComment} handleSavedPost={handleSavedPost} savedPosts={savedPosts}/>} />
         <Route path = '/messages' element={<Messages />} />
         <Route path = '/profile' element={<Profile />} />
       </Routes>
